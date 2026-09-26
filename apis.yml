@@ -1,23 +1,61 @@
 aid: audiencerepublic
+
 name: Audiencerepublic
-description: 'Audiencerepublic is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Audiencerepublic is a company listed on EquityZen that appears to be a financial services or investment platform. Public information about its services and APIs is limited, and no dedicated corporate website or API documentation could be located through web searches. The entry remains a stub pending further discovery of official resources.'
+
 url: https://raw.githubusercontent.com/api-evangelist/audiencerepublic/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-26 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-26'
+
 modified: '2026-09-26'
+
 tags:
 - Company
-apis: []
+- Finance
+- Investment
+- Platform
+- Services
+- API
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/audiencerepublic-hosts.yml
+- type: Vendors
+  url: vendors/audiencerepublic-vendors.yml
+- type: DomainSecurity
+  url: security/audiencerepublic-domain-security.yml
 - type: Website
   url: https://equityzen.com/company/audiencerepublic
+
+apis: []
+
+x-coverage:
+  state: gated
+  reason: partner-login
+  detail: API documentation at https://developer.arep.co returns AccessDenied, indicating a partner login wall.
+  evidence:
+    - url: https://developer.arep.co/openapi.json
+      status: 200
+  checked: 2026-09-26
+x-enrichment:
+  date: '2026-09-26'
+  status: enriched
+  artifacts_added: 4
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
